@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gome.lark.role.dao.CompanyDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.gome.lark.role.entity.CompanyEntity" id="companyMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="contact" column="contact"/>
+        <result property="address" column="address"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="delFlag" column="del_flag"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="com.gome.lark.role.entity.CompanyEntity">
+		select * from company where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="com.gome.lark.role.entity.CompanyEntity">
+		select * from company
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from company 
+	</select>
+	 
+	<insert id="save" parameterType="com.gome.lark.role.entity.CompanyEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into company
+		(
+			`name`, 
+			`contact`, 
+			`address`, 
+			`create_time`, 
+			`update_time`, 
+			`del_flag`, 
+		)
+		values
+		(
+			#{name}, 
+			#{contact}, 
+			#{address}, 
+			#{createTime}, 
+			#{updateTime}, 
+			#{delFlag}, 
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.gome.lark.role.entity.CompanyEntity">
+		update company 
+		<set>
+			<if test="name != null">`name` = #{name}, </if>
+			<if test="contact != null">`contact` = #{contact}, </if>
+			<if test="address != null">`address` = #{address}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="updateTime != null">`update_time` = #{updateTime}, </if>
+			<if test="delFlag != null">`del_flag` = #{delFlag}, </if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from company where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from company where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

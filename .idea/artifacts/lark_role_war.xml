@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lark-role:war">
+    <output-path>$PROJECT_DIR$/lark-role/target</output-path>
+    <root id="archive" name="lark-role.war">
+      <element id="artifact" artifact-name="lark-role:war exploded" />
+    </root>
+  </artifact>
+</component>

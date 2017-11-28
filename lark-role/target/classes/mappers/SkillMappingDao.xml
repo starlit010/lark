@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gome.lark.role.dao.SkillMappingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.gome.lark.role.entity.SkillMappingEntity" id="skillMappingMap">
+        <result property="id" column="id"/>
+        <result property="skillId" column="skill_id"/>
+        <result property="menuId" column="menu_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="com.gome.lark.role.entity.SkillMappingEntity">
+		select * from skill_mapping where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="com.gome.lark.role.entity.SkillMappingEntity">
+		select * from skill_mapping
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from skill_mapping 
+	</select>
+	 
+	<insert id="save" parameterType="com.gome.lark.role.entity.SkillMappingEntity">
+		insert into skill_mapping
+		(
+			`id`, 
+			`skill_id`, 
+			`menu_id`, 
+			`create_time`, 
+			`update_time`, 
+		)
+		values
+		(
+			#{id}, 
+			#{skillId}, 
+			#{menuId}, 
+			#{createTime}, 
+			#{updateTime}, 
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.gome.lark.role.entity.SkillMappingEntity">
+		update skill_mapping 
+		<set>
+			<if test="skillId != null">`skill_id` = #{skillId}, </if>
+			<if test="menuId != null">`menu_id` = #{menuId}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="updateTime != null">`update_time` = #{updateTime}, </if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from skill_mapping where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from skill_mapping where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

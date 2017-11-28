@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gome.lark.role.dao.SysLogDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.gome.lark.role.entity.SysLogEntity" id="sysLogMap">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="operation" column="operation"/>
+        <result property="method" column="method"/>
+        <result property="params" column="params"/>
+        <result property="time" column="time"/>
+        <result property="ip" column="ip"/>
+        <result property="channelId" column="channel_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+	<select id="queryObject" resultType="com.gome.lark.role.entity.SysLogEntity">
+		select * from sys_log where id = #{value}
+	</select>
+
+	<select id="queryList" resultType="com.gome.lark.role.entity.SysLogEntity">
+		select * from sys_log
+        <choose>
+            <when test="sidx != null and sidx.trim() != ''">
+                order by ${sidx} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="queryTotal" resultType="int">
+		select count(*) from sys_log 
+	</select>
+	 
+	<insert id="save" parameterType="com.gome.lark.role.entity.SysLogEntity" useGeneratedKeys="true" keyProperty="id">
+		insert into sys_log
+		(
+			`user_id`, 
+			`operation`, 
+			`method`, 
+			`params`, 
+			`time`, 
+			`ip`, 
+			`channel_id`, 
+			`create_time`, 
+			`update_time`, 
+		)
+		values
+		(
+			#{userId}, 
+			#{operation}, 
+			#{method}, 
+			#{params}, 
+			#{time}, 
+			#{ip}, 
+			#{channelId}, 
+			#{createTime}, 
+			#{updateTime}, 
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.gome.lark.role.entity.SysLogEntity">
+		update sys_log 
+		<set>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="operation != null">`operation` = #{operation}, </if>
+			<if test="method != null">`method` = #{method}, </if>
+			<if test="params != null">`params` = #{params}, </if>
+			<if test="time != null">`time` = #{time}, </if>
+			<if test="ip != null">`ip` = #{ip}, </if>
+			<if test="channelId != null">`channel_id` = #{channelId}, </if>
+			<if test="createTime != null">`create_time` = #{createTime}, </if>
+			<if test="updateTime != null">`update_time` = #{updateTime}, </if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from sys_log where id = #{value}
+	</delete>
+	
+	<delete id="deleteBatch">
+		delete from sys_log where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>
