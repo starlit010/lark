@@ -9,6 +9,7 @@
 		<param-value>
 			<!--classpath:spring-beans.xml-->
 			classpath:spring-mvc.xml
+			classpath:spring-jwt.xml
 			classpath:spring-jdbc.xml
 			classpath:spring-redis.xml
 			classpath:spring-scheduler.xml
