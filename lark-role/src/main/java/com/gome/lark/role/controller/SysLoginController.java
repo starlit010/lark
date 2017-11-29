@@ -2,6 +2,7 @@ package com.gome.lark.role.controller;
 
 
 import com.gome.lark.common.utils.R;
+import com.gome.lark.common.validator.Assert;
 import com.gome.lark.role.shiro.ShiroUtils;
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
@@ -21,6 +22,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 登录相关
@@ -69,8 +72,22 @@ public class SysLoginController {
 
 	@ResponseBody
 	@RequestMapping(value = "/user/token", method = RequestMethod.GET)
-	public void getToken(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+	public void getToken(HttpServletRequest request, HttpServletResponse response, String username, String password)throws ServletException, IOException{
 
+//		Assert.isBlank(username, "用户名不能为空");
+//		Assert.isBlank(password, "密码不能为空");
+//
+//		//用户登录
+//		long userId = userService.login(username, password);
+//
+//		//生成token
+//		String token = jwtUtils.generateToken(userId);
+//
+//		Map<String, Object> map = new HashMap<>();
+//		map.put("token", token);
+//		map.put("expire", jwtUtils.getExpire());
+//
+//		return R.ok(map);
 
 	}
 	
