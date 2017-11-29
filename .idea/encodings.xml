@@ -36,7 +36,6 @@
     <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/aspect/RedisAspect.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/aspect/SysLogAspect.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/dao" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/dao/BaseDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/dao/SysMenuDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/entity" charset="GBK" />
     <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/entity/SysChannelEntity.java" charset="GBK" />

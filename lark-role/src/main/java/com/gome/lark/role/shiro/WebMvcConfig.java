@@ -1,4 +1,4 @@
-package com.gome.lark.role.config;
+package com.gome.lark.role.shiro;
 
 import com.gome.lark.role.interceptor.AuthorizationInterceptor;
 import com.gome.lark.role.resolver.LoginUserHandlerMethodArgumentResolver;
