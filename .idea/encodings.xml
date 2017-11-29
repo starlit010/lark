@@ -1,55 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lark-common" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/dao/BaseDao.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/exception/RRException.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/exception/RRExceptionHandler.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/ConfigConstant.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/Constant.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/DateUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/HttpContextUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/IPUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/PageUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/Query.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/R.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/RedisKeys.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/RedisUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/utils/SpringContextUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/validator/Assert.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/validator/ValidatorUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/validator/group/AddGroup.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/validator/group/AliyunGroup.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/validator/group/Group.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/validator/group/QcloudGroup.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/validator/group/QiniuGroup.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/validator/group/UpdateGroup.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/xss/HTMLFilter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/xss/SQLFilter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/xss/XssFilter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-common/src/main/java/com.gome.lark.common/xss/XssHttpServletRequestWrapper.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lark-role" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/annotation/DataFilter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/annotation/SysLog.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/aspect/DataFilterAspect.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/aspect/RedisAspect.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/aspect/SysLogAspect.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/dao" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/dao/BaseDao.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/dao/SysMenuDao.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/entity" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/entity/SysChannelEntity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/java/com/gome/lark/role/entity/SysLogEntity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/resources/config.properties" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/resources/db.properties" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/resources/log4j.properties" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/resources/mappers" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/resources/mybatis.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/resources/spring-jdbc.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/resources/spring-mvc.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/resources/spring-redis.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/resources/spring-scheduler.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lark-role/src/main/webapp" charset="UTF-8" />
   </component>
 </project>
