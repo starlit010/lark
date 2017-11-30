@@ -2,8 +2,7 @@ package com.gome.lark.role.controller;
 
 
 import com.gome.lark.common.utils.R;
-import com.gome.lark.common.validator.Assert;
-import com.gome.lark.role.shiro.ShiroUtils;
+import com.gome.lark.role.auth.ShiroUtils;
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
 import org.apache.shiro.authc.*;
@@ -22,8 +21,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 登录相关

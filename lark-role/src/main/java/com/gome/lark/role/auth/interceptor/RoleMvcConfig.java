@@ -1,7 +1,5 @@
-package com.gome.lark.role.shiro;
+package com.gome.lark.role.auth.interceptor;
 
-import com.gome.lark.role.interceptor.AuthorizationInterceptor;
-import com.gome.lark.role.resolver.LoginUserHandlerMethodArgumentResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
@@ -13,12 +11,9 @@ import java.util.List;
 /**
  * MVC配置
  *
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2017-04-20 22:30
  */
 @Configuration
-public class WebMvcConfig extends WebMvcConfigurerAdapter {
+public class RoleMvcConfig extends WebMvcConfigurerAdapter {
     @Autowired
     private AuthorizationInterceptor authorizationInterceptor;
     @Autowired

@@ -1,6 +1,5 @@
-package com.gome.lark.role.shiro;
+package com.gome.lark.role.auth;
 
-import com.gome.lark.role.jwt.JwtFilter;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
@@ -21,9 +20,6 @@ import java.util.Map;
 /**
  * Shiro的配置文件
  *
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2017/9/27 22:02
  */
 @Configuration
 public class ShiroConfig {
@@ -37,7 +33,7 @@ public class ShiroConfig {
         sessionManager.setSessionValidationSchedulerEnabled(true);
         sessionManager.setSessionIdUrlRewritingEnabled(false);
 
-        //如果开启redis缓存且renren.shiro.redis=true，则shiro session存到redis里
+        //如果开启redis缓存且renren.auth.redis=true，则shiro session存到redis里
         if(redisOpen && shiroRedis){
             sessionManager.setSessionDAO(redisShiroSessionDAO);
         }

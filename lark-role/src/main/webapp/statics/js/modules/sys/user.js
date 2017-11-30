@@ -163,7 +163,7 @@ var vm = new Vue({
             });
         },
         getRoleList: function(){
-            $.get(baseURL + "sys/role/select", function(r){
+            $.get(baseURL + "sys/auth/select", function(r){
                 vm.roleList = r.list;
             });
         },

@@ -1,4 +1,4 @@
-package com.gome.lark.role.shiro;
+package com.gome.lark.role.auth;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
@@ -7,9 +7,6 @@ import org.springframework.stereotype.Component;
 /**
  * Shiro权限标签
  * 
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2016年12月3日 下午11:32:47
  */
 @Component
 public class ShiroTag {

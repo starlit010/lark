@@ -10,7 +10,7 @@ package com.gome.lark.common.utils;
 public class RedisKeys {
 
     public static String getSysConfigKey(String key){
-        return "sys:config:" + key;
+        return "sys:interceptor:" + key;
     }
 
     public static String getShiroSessionKey(String key){

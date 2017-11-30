@@ -1,8 +1,8 @@
-package com.gome.lark.role.interceptor;
+package com.gome.lark.role.auth.interceptor;
 
 
 import com.gome.lark.common.exception.RRException;
-import com.gome.lark.role.annotation.Login;
+import com.gome.lark.role.auth.annotation.Login;
 import com.gome.lark.role.utils.JwtUtils;
 import io.jsonwebtoken.Claims;
 import org.apache.commons.lang.StringUtils;
@@ -17,9 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 权限(Token)验证
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2017-03-23 15:38
  */
 @Component
 public class AuthorizationInterceptor extends HandlerInterceptorAdapter {

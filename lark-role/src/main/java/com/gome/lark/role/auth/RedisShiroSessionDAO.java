@@ -1,4 +1,4 @@
-package com.gome.lark.role.shiro;
+package com.gome.lark.role.auth;
 
 import com.gome.lark.common.utils.RedisKeys;
 import org.apache.shiro.session.Session;
@@ -11,11 +11,8 @@ import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
 /**
- * shiro session dao
+ * auth session dao
  *
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2017/9/27 21:35
  */
 @Component
 public class RedisShiroSessionDAO extends EnterpriseCacheSessionDAO {

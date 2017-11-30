@@ -1,7 +1,7 @@
-package com.gome.lark.role.jwt;
+package com.gome.lark.role.auth;
 
+import com.gome.lark.common.utils.R;
 import com.google.gson.Gson;
-import io.renren.common.utils.R;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpStatus;
 import org.apache.shiro.authc.AuthenticationException;
@@ -17,9 +17,6 @@ import java.io.IOException;
 /**
  * oauth2过滤器
  *
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2017-05-20 13:00
  */
 public class JwtFilter extends AuthenticatingFilter {
 
@@ -31,8 +28,8 @@ public class JwtFilter extends AuthenticatingFilter {
         if(StringUtils.isBlank(token)){
             return null;
         }
-
-        return new OAuth2Token(token);
+        return null;
+//        return new OAuth2Token(token);
     }
 
     @Override

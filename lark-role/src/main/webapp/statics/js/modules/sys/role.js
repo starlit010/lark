@@ -1,6 +1,6 @@
 $(function () {
     $("#jqGrid").jqGrid({
-        url: baseURL + 'sys/role/list',
+        url: baseURL + 'sys/auth/list',
         datatype: "json",
         colModel: [
             { label: '角色ID', name: 'roleId', index: "role_id", width: 45, key: true },
@@ -142,7 +142,7 @@ var vm = new Vue({
             confirm('确定要删除选中的记录？', function(){
                 $.ajax({
                     type: "POST",
-                    url: baseURL + "sys/role/delete",
+                    url: baseURL + "sys/auth/delete",
                     contentType: "application/json",
                     data: JSON.stringify(roleIds),
                     success: function(r){
@@ -158,7 +158,7 @@ var vm = new Vue({
             });
         },
         getRole: function(roleId){
-            $.get(baseURL + "sys/role/info/"+roleId, function(r){
+            $.get(baseURL + "sys/auth/info/"+roleId, function(r){
                 vm.role = r.role;
 
                 //勾选角色所拥有的菜单
@@ -195,7 +195,7 @@ var vm = new Vue({
             }
             vm.role.deptIdList = deptIdList;
 
-            var url = vm.role.roleId == null ? "sys/role/save" : "sys/role/update";
+            var url = vm.role.roleId == null ? "sys/auth/save" : "sys/auth/update";
             $.ajax({
                 type: "POST",
                 url: baseURL + url,

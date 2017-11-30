@@ -1,4 +1,4 @@
-package com.gome.lark.role.annotation;
+package com.gome.lark.role.auth.annotation;
 
 import java.lang.annotation.*;
 

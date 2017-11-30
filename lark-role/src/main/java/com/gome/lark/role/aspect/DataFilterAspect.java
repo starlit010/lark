@@ -6,7 +6,7 @@ import com.gome.lark.common.exception.RRException;
 import com.gome.lark.common.utils.Constant;
 import com.gome.lark.role.entity.SysUserEntity;
 import com.gome.lark.role.service.SysDeptService;
-import com.gome.lark.role.shiro.ShiroUtils;
+import com.gome.lark.role.auth.ShiroUtils;
 import org.apache.commons.lang.StringUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;

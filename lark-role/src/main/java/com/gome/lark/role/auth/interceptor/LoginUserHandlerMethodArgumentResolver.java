@@ -1,8 +1,7 @@
-package com.gome.lark.role.resolver;
+package com.gome.lark.role.auth.interceptor;
 
-import com.gome.lark.role.annotation.LoginUser;
+import com.gome.lark.role.auth.annotation.LoginUser;
 import com.gome.lark.role.entity.SysUserEntity;
-import com.gome.lark.role.interceptor.AuthorizationInterceptor;
 import com.gome.lark.role.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
@@ -15,9 +14,6 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 
 /**
  * 有@LoginUser注解的方法参数，注入当前登录用户
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2017-03-23 22:02
  */
 @Component
 public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {

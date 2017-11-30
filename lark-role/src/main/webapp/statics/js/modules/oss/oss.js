@@ -75,7 +75,7 @@ var vm = new Vue({
 			vm.reload();
 		},
 		getConfig: function () {
-            $.getJSON(baseURL + "sys/oss/config", function(r){
+            $.getJSON(baseURL + "sys/oss/interceptor", function(r){
 				vm.config = r.config;
             });
         },
