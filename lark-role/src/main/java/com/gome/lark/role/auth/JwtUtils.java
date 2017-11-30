@@ -1,4 +1,4 @@
-package com.gome.lark.role.utils;
+package com.gome.lark.role.auth;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -10,10 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
- * jwt工具类
- * @author chenshun
- * @email sunlightcs@gmail.com
- * @date 2017/9/21 22:21
+ * jwt解析类
  */
 @Component
 public class JwtUtils {

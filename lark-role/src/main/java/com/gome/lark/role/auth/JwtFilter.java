@@ -7,6 +7,7 @@ import org.apache.http.HttpStatus;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.web.filter.authc.AuthenticatingFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -20,21 +21,22 @@ import java.io.IOException;
  */
 public class JwtFilter extends AuthenticatingFilter {
 
+    @Autowired
+    private JwtUtils jwtUtils;
+
     @Override
     protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) throws Exception {
         //获取请求token
         String token = getRequestToken((HttpServletRequest) request);
-
         if(StringUtils.isBlank(token)){
             return null;
         }
-        return null;
-//        return new OAuth2Token(token);
+        return new JwtToken(token);
     }
 
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
-        return false;
+        return true;
     }
 
     @Override
@@ -45,10 +47,8 @@ public class JwtFilter extends AuthenticatingFilter {
             HttpServletResponse httpResponse = (HttpServletResponse) response;
             String json = new Gson().toJson(R.error(HttpStatus.SC_UNAUTHORIZED, "invalid token"));
             httpResponse.getWriter().print(json);
-
             return false;
         }
-
         return executeLogin(request, response);
     }
 
@@ -60,13 +60,11 @@ public class JwtFilter extends AuthenticatingFilter {
             //处理登录失败的异常
             Throwable throwable = e.getCause() == null ? e : e.getCause();
             R r = R.error(HttpStatus.SC_UNAUTHORIZED, throwable.getMessage());
-
             String json = new Gson().toJson(r);
             httpResponse.getWriter().print(json);
         } catch (IOException e1) {
 
         }
-
         return false;
     }
 
@@ -75,13 +73,11 @@ public class JwtFilter extends AuthenticatingFilter {
      */
     private String getRequestToken(HttpServletRequest httpRequest){
         //从header中获取token
-        String token = httpRequest.getHeader("token");
-
+        String token = httpRequest.getHeader(jwtUtils.getHeader());
         //如果header中不存在token，则从参数中获取token
         if(StringUtils.isBlank(token)){
-            token = httpRequest.getParameter("token");
+            token = httpRequest.getParameter(jwtUtils.getHeader());
         }
-
         return token;
     }
 

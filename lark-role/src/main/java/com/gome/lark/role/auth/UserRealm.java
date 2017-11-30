@@ -6,7 +6,6 @@ import com.gome.lark.role.auth.annotation.Login;
 import com.gome.lark.role.dao.SysMenuDao;
 import com.gome.lark.role.dao.SysUserDao;
 import com.gome.lark.role.entity.SysUserEntity;
-import com.gome.lark.role.utils.JwtUtils;
 import io.jsonwebtoken.Claims;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authc.*;
@@ -34,7 +33,11 @@ public class UserRealm extends AuthorizingRealm {
     private SysUserDao sysUserDao;
     @Autowired
     private SysMenuDao sysMenuDao;
-    
+	@Autowired
+	private JwtUtils jwtUtils;
+
+	public static final String USER_KEY = "userId";
+
     /**
      * 授权(验证权限时调用)
      */
@@ -97,11 +100,6 @@ public class UserRealm extends AuthorizingRealm {
 		shaCredentialsMatcher.setHashIterations(ShiroUtils.hashIterations);
 		super.setCredentialsMatcher(shaCredentialsMatcher);
 	}
-
-	@Autowired
-	private JwtUtils jwtUtils;
-
-	public static final String USER_KEY = "userId";
 
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		Login annotation;

@@ -14,7 +14,7 @@
      	http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
 
 
-	<bean class="com.gome.lark.role.utils.JwtUtils">
+	<bean class="com.gome.lark.role.auth.JwtUtils">
 		<property name="secret" value="${lark.jwt.secret}"/>
 		<property name="expire" value="${lark.jwt.expire}"/>
 		<property name="header" value="${lark.jwt.header}"/>

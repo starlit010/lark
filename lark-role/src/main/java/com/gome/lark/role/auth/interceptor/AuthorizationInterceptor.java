@@ -3,7 +3,7 @@ package com.gome.lark.role.auth.interceptor;
 
 import com.gome.lark.common.exception.RRException;
 import com.gome.lark.role.auth.annotation.Login;
-import com.gome.lark.role.utils.JwtUtils;
+import com.gome.lark.role.auth.JwtUtils;
 import io.jsonwebtoken.Claims;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
